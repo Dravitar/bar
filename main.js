@@ -2,7 +2,7 @@ function $(x) { return document.getElementById(x); }
 
 function getDefaultUser() {
   return {
-    bars: {0, 0, 0, 0, 0, 0, 0, 0, 0}
+    bars: [0, 0, 0, 0, 0, 0, 0, 0, 0],
   };
 }
 
