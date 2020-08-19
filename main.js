@@ -20,7 +20,7 @@ function barClick(item, amount) {
     }
     amount--;
   }
-  if(user.bars[item-1] == 10 && $("reset"+item).style.display == "none") $("reset"+item).style.display = "");
+  if(user.bars[item-1] == 10 && $("reset"+item).style.display == "none") $("reset"+item).style.display = "";
 }
 
 function barReset(item, amount) {
