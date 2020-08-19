@@ -8,7 +8,7 @@ function getDefaultUser() {
 
 var user = getDefaultUser();
 
-let bar = '&#x25AE';
+let bar = '&#x25AE;';
 
 function barClick(item, amount) {
   let name = "bar"+item;
