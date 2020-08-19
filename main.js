@@ -64,4 +64,8 @@ function update() {
     if(user.bars[i]==0) $("bar"+j).textContent = "";
   }
 }
-    
+
+function startCycle() {
+  setInterval(update, 10);
+}
+  
