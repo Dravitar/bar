@@ -44,12 +44,12 @@ function makeBar(n) {
   newButton2.setAttribute("onClick", "barReset("+n+",1)");
   newButton1.textContent = "+";
   for(i=0;i<n;i++){
-    newButton1.textContent += "&#x25AE"
-    newButton2.textContent += "&#x25AE"
+    newButton1.textContent += "&#x25AE;"
+    newButton2.textContent += "&#x25AE;"
   }
-  newButton2.textContent += "&#x25BA"
+  newButton2.textContent += "&#x25BA;"
   for(i=0;i<n+1;i++){
-    newButton2.textContent += "&#x25AE";
+    newButton2.textContent += "&#x25AE;";
   }
   newDiv.appendChild(newButton1);
   newDiv.appendChild(newBar);
