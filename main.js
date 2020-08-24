@@ -9,6 +9,7 @@ function getDefaultUser() {
 var user = getDefaultUser();
 
 let bar = "\u25AE";
+let arrow = "\u25BA";
 
 function barClick(item, amount) {
   let name = "bar"+item;
@@ -35,25 +36,20 @@ function barReset(item, amount) {
 
 function makeBar(n) {
   var newDiv = document.createElement("div");
-  var newButton1 = document.createElement("button");
   var newBar = document.createElement("div");
   var newButton2 = document.createElement("button");
   newDiv.id = "row"+n;
-  newButton1.id = "button"+n;
   newBar.id = "bar"+n;
   newButton2.id = "reset"+n;
-  newButton1.setAttribute("onClick", "barClick("+n+",1)");
   newButton2.setAttribute("onClick", "barReset("+n+",1)");
   newButton1.textContent = "+";
   for(i=0;i<n;i++){
-    newButton1.textContent += bar;
     newButton2.textContent += bar;
   }
-  newButton2.textContent += bar;
+  newButton2.textContent += arrow;
   for(i=0;i<n+1;i++){
     newButton2.textContent += bar;
   }
-  newDiv.appendChild(newButton1);
   newDiv.appendChild(newBar);
   newDiv.appendChild(newButton2);
   $("rows").appendChild(newDiv);
