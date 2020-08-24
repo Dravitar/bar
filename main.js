@@ -28,6 +28,8 @@ function barReset(item, amount) {
   if(user.bars[item-1] == 10) {
     user.bars[item] = user.bars[item]+1;
     user.bars[item-1] = 0;
+    let next = 1 + item;
+    makeBar(next);
   }
 }
 
@@ -44,12 +46,12 @@ function makeBar(n) {
   newButton2.setAttribute("onClick", "barReset("+n+",1)");
   newButton1.textContent = "+";
   for(i=0;i<n;i++){
-    newButton1.textContent += "&#x25AE;"
-    newButton2.textContent += "&#x25AE;"
+    newButton1.textContent += bar;
+    newButton2.textContent += bar;
   }
-  newButton2.textContent += "&#x25BA;"
+  newButton2.textContent += bar;
   for(i=0;i<n+1;i++){
-    newButton2.textContent += "&#x25AE;";
+    newButton2.textContent += bar;
   }
   newDiv.appendChild(newButton1);
   newDiv.appendChild(newBar);
