@@ -55,10 +55,10 @@ function makeBar(n) {
   for(i=0;i<n+1;i++){
     newButton2.textContent += bar;
   }
-  newDiv.appendChild(newBar);
   content = content + ": ";
   var text = document.createTextNode(content);
   newDiv.appendChild(text);
+  newDiv.appendChild(newBar);
   newDiv.appendChild(newButton2);
   $("rows").appendChild(newDiv);
 }
@@ -72,6 +72,7 @@ function update() {
 }
 
 function startCycle() {
+  makeBar(1);
   setInterval(update, 10);
 }
   
