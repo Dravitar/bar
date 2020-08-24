@@ -31,8 +31,11 @@ function barReset(item, amount) {
     user.bars[item-1] = 0;
     let next = 1 + item;
     if(!$("bar"+next)) makeBar(next);
-    let newName = "bar"+next;
-    $(newName).textContent += bar;
+    if(user.bars[item] < 10){
+      let newName = "bar"+next;
+      $(newName).textContent += bar;
+      user.bars[item] = user.bars[item]+1;
+    }
   }
 }
 
