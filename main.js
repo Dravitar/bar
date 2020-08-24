@@ -43,17 +43,22 @@ function makeBar(n) {
   var newBar = document.createElement("div");
   var newButton2 = document.createElement("button");
   newDiv.id = "row"+n;
+  let content = "";
   newBar.id = "bar"+n;
   newButton2.id = "reset"+n;
   newButton2.setAttribute("onClick", "barReset("+n+",1)");
   for(i=0;i<n;i++){
     newButton2.textContent += bar;
+    content += bar;
   }
   newButton2.textContent += arrow;
   for(i=0;i<n+1;i++){
     newButton2.textContent += bar;
   }
   newDiv.appendChild(newBar);
+  content = content + ": ";
+  var text = document.createTextNode(content);
+  newDiv.appendChild(text);
   newDiv.appendChild(newButton2);
   $("rows").appendChild(newDiv);
 }
