@@ -63,7 +63,7 @@ function makeBar(n) {
 function update() {
   for(i=0;i<8;i++){
     let j = i+1;
-    if(user.bars[i]==0) $("bar"+j).textContent = "";
+    if(user.bars[i]==0 && $("bar"+j)) $("bar"+j).textContent = "";
   }
 }
 
