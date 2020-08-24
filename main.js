@@ -40,7 +40,8 @@ function barReset(item, amount) {
 
 function makeBar(n) {
   var newDiv = document.createElement("div");
-  var newBar = document.createElement("div");
+  var newLine = document.createElement("div");
+  var newBar = document.createElement("span");
   var newButton2 = document.createElement("button");
   newDiv.id = "row"+n;
   let content = "";
@@ -57,8 +58,9 @@ function makeBar(n) {
   }
   content = content + ": ";
   var text = document.createTextNode(content);
-  newDiv.appendChild(text);
-  newDiv.appendChild(newBar);
+  newLine.appendChild(text);
+  newLine.appendChild(newBar);
+  newDiv.appendChild(newLine);
   newDiv.appendChild(newButton2);
   $("rows").appendChild(newDiv);
 }
