@@ -42,7 +42,6 @@ function makeBar(n) {
   newBar.id = "bar"+n;
   newButton2.id = "reset"+n;
   newButton2.setAttribute("onClick", "barReset("+n+",1)");
-  newButton1.textContent = "+";
   for(i=0;i<n;i++){
     newButton2.textContent += bar;
   }
