@@ -27,7 +27,6 @@ function barClick(item, amount) {
 function barReset(item, amount) {
   let name = "reset"+item;
   if(user.bars[item-1] == 10) {
-    user.bars[item] = user.bars[item]+1;
     user.bars[item-1] = 0;
     let next = 1 + item;
     if(!$("bar"+next)) makeBar(next);
