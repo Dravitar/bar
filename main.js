@@ -30,7 +30,9 @@ function barReset(item, amount) {
     user.bars[item] = user.bars[item]+1;
     user.bars[item-1] = 0;
     let next = 1 + item;
-    makeBar(next);
+    if(!$("bar"+next)) makeBar(next);
+    let newName = "bar"+next;
+    $(newName).textContent += bar;
   }
 }
 
