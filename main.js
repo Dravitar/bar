@@ -83,7 +83,7 @@ function update() {
     let j = i+1;
     if(user.bars[i]==0 && $("bar"+j)) $("bar"+j).textContent = "";
   }
-  if(!$("upgrade1")&&(user.bars[1] > 0)) loadUpgradeSet(1);
+  if(!$("barAutoPresser")&&(user.bars[1] > 0)) loadUpgradeSet(1);
 }
 
 function startCycle() {
