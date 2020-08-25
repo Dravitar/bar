@@ -7,7 +7,7 @@ function Upgrade(id, price, index, repeated, growth, purchased) {
   this.purchased = purchased;
 }
 
-let barAutoPresser = new Upgrade("barAutoPresser", 1, 2, 0, 0, 0);
+let barAutoPresser = new Upgrade("barAutoPresser", 1, 2, 9, 3, 0);
 
 let allUpgrades = [barAutoPresser];
 
@@ -33,8 +33,8 @@ function createUpgrade(upgrade, index, type) {
   }
   newUpgrade.id = upgrade.id;
   newUpgrade.setAttribute("onclick", "checkUpgrade('"+upgrade.id+"')");
-  newUpgrade.innerHTML = format(upgrade.price)+indexBars+"<br/>"+
-    symbol+affectedBars;
+  newUpgrade.innerHTML = "<span id='"+upgrade.id+"price'>"+format(upgrade.price)+"</span>"+indexBars+"<br/>"+
+    symbol+affectedBars+"\u2191";
   $("upgrades").appendChild(newUpgrade);
 }
 
@@ -46,6 +46,8 @@ function checkUpgrade(id) {
   if(upgrade.purchased<=upgrade.repeated&&user.bars[upgrade.index-1]>=upgrade.price){
     upgrade.purchased++;
     user.bars[upgrade.index-1]-=upgrade.price;
+    upgrade.price*=upgrade.growth;
+    $(id+"price").textContent = format(upgrade.price);
   }
 }
 
@@ -53,5 +55,10 @@ function loadUpgradeSet(num) {
   switch(num) {
     case 1:
       createUpgrade(barAutoPresser, 1, "inf");
+      break;
+    case 2:
+      createUpgrade(firstAutoReset, 2, "inf");
+      createUpgrade(firstConversionBoost, 2, "power");
+      break;
   }
 }
