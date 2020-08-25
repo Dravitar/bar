@@ -33,7 +33,7 @@ function createUpgrade(upgrade, index, type) {
   }
   newUpgrade.id = upgrade.id;
   newUpgrade.setAttribute("onclick", "checkUpgrade("+upgrade.id+")");
-  newUpgrade.innerHTML = "format("+upgrade.price+") "+indexBars+"<br/>"+
+  newUpgrade.innerHTML = format(upgrade.price)+indexBars+"<br/>"+
     symbol+affectedBars;
   $("upgrades").appendChild(newUpgrade);
 }
