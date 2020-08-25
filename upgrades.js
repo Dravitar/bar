@@ -11,7 +11,7 @@ let barAutoPresser = new Upgrade("barAutoPresser", 1, 2, false, 0, 0);
 
 let allUpgrades = [barAutoPresser];
 
-function createUpgrade(upgrade, type) {
+function createUpgrade(upgrade, index, type) {
   let symbol;
   switch(type) {
     case "inf":
@@ -23,14 +23,18 @@ function createUpgrade(upgrade, type) {
   }
   var newUpgrade = document.createElement("button");
   let indexBars = "";
+  let affectedBars = "";
   let bar = "\u25AE";
   for(i=0;i<upgrade.index;i++){
     indexBars+= bar;
   }
+  for(i=0;i<index;i++){
+    affectedBars+= bar;
+  }
   newUpgrade.id = upgrade.id;
   newUpgrade.setAttribute("onclick", "checkUpgrade("+upgrade.id+")");
   newUpgrade.innerHTML = "format("+upgrade.price+") "+indexBars+"<br/>"+
-    symbol+indexBars;
+    symbol+affectedBars;
   $("upgrades").appendChild(newUpgrade);
 }
 
@@ -48,6 +52,6 @@ function checkUpgrade(id) {
 function loadUpgradeSet(num) {
   switch(num) {
     case 1:
-      createUpgrade(barAutoPresser, "inf");
+      createUpgrade(barAutoPresser, 1, "inf");
   }
 }
