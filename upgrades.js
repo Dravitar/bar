@@ -29,6 +29,7 @@ function createUpgrade(upgrade, type) {
   newUpgrade.setAttribute("onclick", "checkUpgrade("+upgrade+")");
   newUpgrade.innerHTML = "format("+upgrade.price+") "+indexBars+"<br/>"+
     symbol+indexBars;
+  $("upgrades").appendChild(newUpgrade);
 }
 
 function checkUpgrade(upgrade) {
