@@ -3,7 +3,7 @@ function $(x) { return document.getElementById(x); }
 function getDefaultUser() {
   return {
     bars: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    lastTick: new Date().getTime();
+    lastTick: new Date().getTime(),
   };
 }
 
