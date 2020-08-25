@@ -7,7 +7,7 @@ function Upgrade(id, price, index, repeated, growth, purchased) {
   this.purchased = purchased;
 }
 
-let barAutoPresser = new Upgrade("barAutoPresser", 1, 2, false, 0, 0);
+let barAutoPresser = new Upgrade("barAutoPresser", 1, 2, 0, 0, 0);
 
 let allUpgrades = [barAutoPresser];
 
