@@ -3,6 +3,7 @@ function $(x) { return document.getElementById(x); }
 function getDefaultUser() {
   return {
     bars: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    lastTick: new Date().getTime();
   };
 }
 
@@ -65,6 +66,17 @@ function makeBar(n) {
   $("rows").appendChild(newDiv);
 }
   
+function gameCycle() {
+  let now = new Date().getTime();
+  let iter = 0;
+  if((now - user.lastTick)>1000) {
+    iter = Math.floor((now-user.lastTick)/1000);
+    user.lastTick = now;
+  }
+  if(barAutoPresser.purchased>0){
+    barClick(1, iter);
+  }
+}
 
 function update() {
   for(i=0;i<8;i++){
@@ -77,5 +89,6 @@ function update() {
 function startCycle() {
   makeBar(1);
   setInterval(update, 10);
+  setInterval(gameCycle, 10);
 }
   
