@@ -8,8 +8,10 @@ function Upgrade(id, price, index, repeated, growth, purchased) {
 }
 
 let barAutoPresser = new Upgrade("barAutoPresser", 1, 2, 9, 3, 0);
+let firstAutoReset = new Upgrade("firstAutoReset", 1, 3, 9, 5, 0);
+let firstConversionBoost = new Upgrade("firstConversionBoost", 1, 3, 9, 5, 0);
 
-let allUpgrades = [barAutoPresser];
+let allUpgrades = [barAutoPresser, firstAutoReset, firstConversionBoost];
 
 function createUpgrade(upgrade, index, type) {
   let symbol;
