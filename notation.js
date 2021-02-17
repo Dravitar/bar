@@ -1,5 +1,5 @@
 function format(value) {
-    //const BARS = ["", "", "", "", "", "", "", ""];
+    /* const BARS = ["", "", "", "", "", "", "", ""];
     const BARS = ["1", "2", "3", "4", "5", "6", "7", "8"];
     const LOG8 = Math.log(8);
     const log8 = Math.LN10 / LOG8 * Math.log10(value);
@@ -17,4 +17,5 @@ function format(value) {
     }
     parts.push(BARS[wholeLog]);
     return parts.join("");
+    */
 }
